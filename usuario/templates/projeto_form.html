@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}        
+        
+          
+    <h2 style="padding-top: 80px;">Cadaster Projeto</h2>
+    <form style="padding-top: 50px;" method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <div class="col-sm-4 form-group mb-0">
+                {% bootstrap_field form.responsavel %}
+            </div>
+
+            <div class="col-sm-4 form-group mb-0">
+                {% bootstrap_field form.colaborador %}
+            </div>
+            <div class="col-sm-4 form-group mb-0">
+                {% bootstrap_field form.cliente %}
+            </div>
+        </div>
+
+
+        <div class="input-group mb-3">
+            <div class="col-sm-4 form-group mb-0">
+                {% bootstrap_field form.titulo %}
+            </div>
+            
+            <div class="col-sm-4 form-group mb-0">
+                {% bootstrap_field form.material %}
+            </div>
+           
+            <div class="col-sm-4 form-group mb-0">
+                {% bootstrap_field form.quantidade %}
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="col-sm-4 form-group mb-0">
+                {% bootstrap_field form.valor %}
+            </div>
+            
+            <div class="col-sm-4 form-group mb-0">
+                {% bootstrap_field form.arquivo %}
+            </div>
+            
+            <div class="col-sm-4 form-group mb-0">
+                {% bootstrap_field form.status %}
+            </div>
+        </div>
+        
+        <input type="submit" class="btn btn-outline-primary" value="Save">
+    </form>
+
+    
+
+{% endblock %}

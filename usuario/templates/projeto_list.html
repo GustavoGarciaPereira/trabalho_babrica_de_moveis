@@ -1,0 +1,57 @@
+
+
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <h1 style="padding-top: 70px;padding-bottom: 50px;">Listagem de projetos</h1>
+    <a class="btn btn-primary" href="/projeto" role="button">Cadastrar Projeto</a>
+      
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">responsavel</th>
+        <th scope="col">colaborador</th>
+        <th scope="col">cliente</th>
+        <th scope="col">titulo</th>
+        <th scope="col">material</th>
+        <th scope="col">quantidade</th>
+        <th scope="col">valor</th>
+        <th scope="col">Aprovado</th>
+        <th scope="col">arquivo</th>
+        <th> Avaliar </th>
+      </tr>
+    </thead>
+    <tbody>
+        
+        {% for projeto in object_list %}
+        <tr>
+            <td>{{ projeto.responsavel}}</td>
+            <td>{{ projeto.colaborador}}</td>
+            <td>{{ projeto.cliente}}</td>
+            <td>{{ projeto.titulo}}</td>
+            <td>{{ projeto.material}}</td>
+            <td>{{ projeto.quantidade}}</td>
+            <td>{{ projeto.valor}}</td>
+            <td>
+                
+                {% if projeto.status %}
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/240px-Green_check.svg.png" width="24px" height="24px">
+                {% else %}
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRoos7tqkGZmgFppDobQKTUWJv8AAyJiNvRHA&usqp=CAU" width="30px" height="30px">
+                {% endif %}
+                </td>
+            <td>
+                <a class="btn btn-primary" href="media/{{ projeto.arquivo }}" role="button">Arquivo</a>  
+            </td>
+            <td>
+                <a class="btn btn-primary" href="{{ projeto.get_absolute_url }}" role="button">Avaliar</a>  
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+
+{% endblock %}

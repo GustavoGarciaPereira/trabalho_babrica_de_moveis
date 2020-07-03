@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h2 style="padding-top: 80px;">Cadaster Clinete</h2>
+<form style="padding-top: 200px;" method="post">{% csrf_token %}
+    <div class="input-group mb-3">
+        <div class="col-sm-4 form-group mb-0">
+            {% bootstrap_field form.nome %}
+        </div>
+
+        <div class="col-sm-4 form-group mb-0">
+            {% bootstrap_field form.tipo %}
+        </div>
+        <div class="col-sm-4 form-group mb-0">
+            {% bootstrap_field form.email %}
+        </div>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="col-sm-4 form-group mb-0">
+            {% bootstrap_field form.senha %}
+        </div>
+        
+        <div class="col-sm-4 form-group mb-0">
+            {% bootstrap_field form.cpf %}
+        </div>
+       
+        <div class="col-sm-4 form-group mb-0">
+            {% bootstrap_field form.data_nascimento %}
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <div class="col-sm-4 form-group mb-0">
+            {% bootstrap_field form.rua %}
+        </div>
+        
+        <div class="col-sm-4 form-group mb-0">
+            {% bootstrap_field form.numero %}
+        </div>
+        
+        <div class="col-sm-4 form-group mb-0">
+            {% bootstrap_field form.cep %}
+        </div>
+    </div>
+    <div class="input-group mb-3">
+
+        <div class="col-sm-4 form-group mb-0">
+            {% bootstrap_field form.bairro %}
+        </div>
+        
+        <div class="col-sm-4 form-group mb-0">
+            {% bootstrap_field form.cidade %}
+        </div>
+        
+        <div class="col-sm-4 form-group mb-0">
+            {% bootstrap_field form.numero_telefome %}
+        </div>
+    </div>
+
+    <div class="col-sm-12 form-group mb-0">
+        {% bootstrap_field form.descricao %}
+    </div>
+
+
+    <input type="submit" class="btn btn-outline-primary" value="Save">
+</form>
+{% endblock %}

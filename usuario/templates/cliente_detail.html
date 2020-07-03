@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h2 style="padding-top: 80px;">Cadaster Clinete</h2>
+    <div class="input-group mb-3">
+        <div class="col-sm-4 form-group mb-0">
+            {{ object.nome }}
+        </div>
+
+        <div class="col-sm-4 form-group mb-0">
+            {{ object.tipo }}
+        </div>
+        <div class="col-sm-4 form-group mb-0">
+            {{ object.email }}
+        </div>
+    </div>
+
+    <div class="input-group mb-3">
+        
+        <div class="col-sm-4 form-group mb-0">
+            {{ object.cpf }}
+        </div>
+       
+        <div class="col-sm-4 form-group mb-0">
+            {{ object.data_nascimento }}
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <div class="col-sm-4 form-group mb-0">
+            {{ object.rua }}
+        </div>
+        
+        <div class="col-sm-4 form-group mb-0">
+            {{ object.numero }}
+        </div>
+        
+        <div class="col-sm-4 form-group mb-0">
+            {{ object.cep }}
+        </div>
+    </div>
+    <div class="input-group mb-3">
+
+        <div class="col-sm-4 form-group mb-0">
+            {{ object.bairro }}
+        </div>
+        
+        <div class="col-sm-4 form-group mb-0">
+            {{ object.cidade }}
+        </div>
+        
+        <div class="col-sm-4 form-group mb-0">
+            {{ object.numero_telefome }}
+        </div>
+    </div>
+
+    <div class="col-sm-12 form-group mb-0">
+        {{ object.descricao }}
+    </div>
+
+{% endblock %}
